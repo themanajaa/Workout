@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct TimerView: View {
+    
+    var cats = ["Bike", "Run", "Walk"]
+    @State private var selectedCat = "Bike"
+    
     var body: some View {
-        Text("TimerView")
+        VStack{
+            NavigationView{
+                List{
+                    Picker("", selection: $selectedCat){
+                        ForEach(cats, id: \.self) {
+                            Text($0)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                }
+            }
+        }
     }
 }
 
