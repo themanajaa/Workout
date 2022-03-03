@@ -9,21 +9,48 @@ import SwiftUI
 
 struct TimerView: View {
     
-    var cats = ["Bike", "Run", "Walk"]
-    @State private var selectedCat = "Bike"
+    var cats = ["🚲", "🏃🏽‍♂️", "🚶🏽‍♂️"]
+    @State private var selectedCat = "🚲"
     
     var body: some View {
         VStack{
-            NavigationView{
-                List{
-                    Picker("", selection: $selectedCat){
-                        ForEach(cats, id: \.self) {
-                            Text($0)
-                        }
-                    }
-                    .pickerStyle(SegmentedPickerStyle())
+            if(selectedCat == "🚲"){
+                Text("Bike")
+            }else if(selectedCat == "🏃🏽‍♂️"){
+                Text("Run")
+            }else{
+                Text("Walk")
+            }
+            Spacer()
+            
+            Text("00:00:00")
+                .font(.system(size: 50, weight: .bold))
+                .padding()
+            
+            Text("0 m")
+                .font(.system(size: 50, weight: .bold))
+            
+            
+            Spacer()
+            
+            Picker("", selection: $selectedCat){
+                ForEach(cats, id: \.self) {
+                    Text($0)
                 }
             }
+            .pickerStyle(SegmentedPickerStyle())
+
+            
+            Button(action:{}) {
+                HStack{
+                    Image(systemName: "play.fill")
+                        .foregroundColor(.white)
+                    Text("Go")
+                        .foregroundColor(.white)
+                }
+                .padding()
+            }
+            .background(Capsule().frame(minWidth: 130, minHeight: 30).foregroundColor(.orange))
         }
     }
 }
