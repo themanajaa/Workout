@@ -39,6 +39,7 @@ struct TimerView: View {
                 }
             }
             .pickerStyle(SegmentedPickerStyle())
+            .padding()
 
             
             Button(action:{}) {
