@@ -12,6 +12,8 @@ struct ProfileView: View {
     @State var firstname: String = ""
     @State var lastname: String = ""
     
+    @State var sex: Sex = .female
+    
     var body: some View {
         
         VStack{
@@ -26,6 +28,15 @@ struct ProfileView: View {
                 .frame(height: 55)
                 .background(Color(.systemGray4))
                 .cornerRadius(10)
+            
+            Picker("Sexe", selection: $sex){
+                ForEach(Sex.allCases, id: \.self){
+                    Text($0.rawValue)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            Text("Date of Birth")
+                
             
             Button{
                 
@@ -51,4 +62,3 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView()
     }
 }
-

@@ -12,3 +12,9 @@ enum Category: String, CaseIterable {
     case Run = "Run"
     case Walk = "Walk"
 }
+
+enum Sex: String, CaseIterable{
+    case female
+    case male
+    case other
+}
