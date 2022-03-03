@@ -20,17 +20,24 @@ struct ProfileView: View {
         
         VStack{
             Text("Profile")
-                .font(.system(size: 40))
                 .padding(0)
+                .frame(alignment: .leading)
             
             VStack(spacing: 0){
                 TextField("First Name", text: $firstname)
                     .padding(.horizontal)
                     .frame(height: 55)
+                
+                Divider()
+                    .padding(.horizontal, 9)
                     
                 TextField("Last Name", text: $lastname)
                     .padding(.horizontal)
                     .frame(height: 55)
+                
+                Divider()
+                    .padding(.horizontal, 9)
+                
                 Picker("Sexe", selection: $sex){
                     ForEach(Sex.allCases, id: \.self){
                         Text($0.rawValue)
@@ -38,18 +45,26 @@ struct ProfileView: View {
                 }
                 .pickerStyle(SegmentedPickerStyle())
                 .padding(10)
+                
+                Divider()
+                    .padding(.horizontal, 9)
+                
                 HStack{
                     Spacer()
                     DatePicker(
                             "Date of Birth",
                             selection: $date,
                             displayedComponents: [.date])
+                        .padding(5)
                 }
+                
+                Divider()
+                    .padding(.horizontal, 9)
                 Button{
                     
                 } label:{
                     Text("Save")
-                        .foregroundColor(.white)
+                        .foregroundColor(.blue)
                         .font(.headline)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -58,13 +73,14 @@ struct ProfileView: View {
                         
                 }
             }
-            .background(Color(.systemGray4))
+            .background(Color.white)
             .cornerRadius(10)
             .padding(10)
             
             Spacer()
         }
         .padding(14)
+        .background(Color(.systemGray4))
     }
 }
 
