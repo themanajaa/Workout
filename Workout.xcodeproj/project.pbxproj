@@ -17,6 +17,7 @@
 		9AFB3DB127D0B6FD00AF504F /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB3DB027D0B6FD00AF504F /* WorkoutView.swift */; };
 		9AFB3DB327D0B70C00AF504F /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB3DB227D0B70C00AF504F /* TimerView.swift */; };
 		9AFB3DB527D0B7A000AF504F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB3DB427D0B7A000AF504F /* ProfileView.swift */; };
+		9AFB3DB827D0CCE300AF504F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AFB3DB727D0CCE300AF504F /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		9AFB3DB027D0B6FD00AF504F /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
 		9AFB3DB227D0B70C00AF504F /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		9AFB3DB427D0B7A000AF504F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		9AFB3DB727D0CCE300AF504F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		9A7C413327D0AFE8004E5984 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
+				9AFB3DB627D0CCBB00AF504F /* Controller */,
 				9AFB3DA927D0B5ED00AF504F /* ViewModel */,
 				9AFB3DA827D0B5E300AF504F /* Model */,
 				9AFB3DA727D0B5D600AF504F /* Views */,
@@ -107,6 +110,14 @@
 				9AFB3DAA27D0B61D00AF504F /* WorkoutViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9AFB3DB627D0CCBB00AF504F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9AFB3DB727D0CCE300AF504F /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				9AFB3DB527D0B7A000AF504F /* ProfileView.swift in Sources */,
 				9AFB3DB327D0B70C00AF504F /* TimerView.swift in Sources */,
 				9A7C413727D0AFE8004E5984 /* ContentView.swift in Sources */,
+				9AFB3DB827D0CCE300AF504F /* ViewController.swift in Sources */,
 				9AFB3DAB27D0B61D00AF504F /* WorkoutViewModel.swift in Sources */,
 				9A7C413527D0AFE8004E5984 /* WorkoutApp.swift in Sources */,
 				9AFB3DAF27D0B64400AF504F /* MainView.swift in Sources */,

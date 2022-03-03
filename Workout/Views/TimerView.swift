@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct TimerView: View {
     
     var cats = ["🚲", "🏃🏽‍♂️", "🚶🏽‍♂️"]
@@ -52,6 +53,12 @@ struct TimerView: View {
                 .padding()
             }
             .background(Capsule().frame(minWidth: 130, minHeight: 30).foregroundColor(.orange))
+            .padding(1)
+            
+            
+        }
+        .onAppear {
+            // ici appeler le msg perm location
         }
     }
 }
