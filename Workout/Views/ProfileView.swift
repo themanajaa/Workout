@@ -14,46 +14,57 @@ struct ProfileView: View {
     
     @State var sex: Sex = .female
     
+    @State private var date = Date()
+    
     var body: some View {
         
         VStack{
             Text("Profile")
-            TextField("First Name", text: $firstname)
-                .padding(.horizontal)
-                .frame(height: 55)
-                .background(Color(.systemGray4))
-                .cornerRadius(10)
-            TextField("Last Name", text: $lastname)
-                .padding(.horizontal)
-                .frame(height: 55)
-                .background(Color(.systemGray4))
-                .cornerRadius(10)
+                .font(.system(size: 40))
+                .padding(0)
             
-            Picker("Sexe", selection: $sex){
-                ForEach(Sex.allCases, id: \.self){
-                    Text($0.rawValue)
+            VStack(spacing: 0){
+                TextField("First Name", text: $firstname)
+                    .padding(.horizontal)
+                    .frame(height: 55)
+                    
+                TextField("Last Name", text: $lastname)
+                    .padding(.horizontal)
+                    .frame(height: 55)
+                Picker("Sexe", selection: $sex){
+                    ForEach(Sex.allCases, id: \.self){
+                        Text($0.rawValue)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding(10)
+                HStack{
+                    Spacer()
+                    DatePicker(
+                            "Date of Birth",
+                            selection: $date,
+                            displayedComponents: [.date])
+                }
+                Button{
+                    
+                } label:{
+                    Text("Save")
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .cornerRadius(10)
+                        .padding(.horizontal)
+                        
                 }
             }
-            .pickerStyle(SegmentedPickerStyle())
-            Text("Date of Birth")
-                
-            
-            Button{
-                
-            } label:{
-                Text("Save")
-                    .foregroundColor(.white)
-                    .font(.headline)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.accentColor)
-                    .cornerRadius(10)
-            }
+            .background(Color(.systemGray4))
+            .cornerRadius(10)
+            .padding(10)
             
             Spacer()
         }
         .padding(14)
-        .navigationTitle("🤯 Add an Expense")
     }
 }
 
