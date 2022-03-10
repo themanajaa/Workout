@@ -6,14 +6,22 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct MainView: View {
+    
+    @StateObject private var viewModel = MainViewModel()
+    
     var body: some View {
         TabView{
             TimerView()
                 .tabItem{
                     Label("Timer", systemImage: "timer")
                 }
+                .onAppear{
+                    viewModel.checkIfLocationServicesIsEnabled()
+                }
+            
             
             WorkoutView()
                 .tabItem{
@@ -33,3 +41,5 @@ struct MainView_Previews: PreviewProvider {
         MainView()
     }
 }
+
+
