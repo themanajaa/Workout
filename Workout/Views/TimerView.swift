@@ -9,9 +9,12 @@ import SwiftUI
 
 
 struct TimerView: View {
+    //@StateObject timer = TimerViewModel
     
     var cats = ["🚲", "🏃🏽‍♂️", "🚶🏽‍♂️"]
     @State private var selectedCat = "🚲"
+    @State var go: Bool = false
+    @State var pause:Bool = false
     
     var body: some View {
         VStack{
@@ -41,19 +44,82 @@ struct TimerView: View {
             }
             .pickerStyle(SegmentedPickerStyle())
             .padding()
-
             
-            Button(action:{}) {
-                HStack{
-                    Image(systemName: "play.fill")
-                        .foregroundColor(.white)
-                    Text("Go")
-                        .foregroundColor(.white)
+            
+            if(!go && !pause){
+                Button{
+                    go.toggle()
+                } label : {
+                    HStack{
+                        Image(systemName: "play.fill")
+                            .foregroundColor(.white)
+                        Text("Go")
+                            .foregroundColor(.white)
+                    }
+                    .padding()
                 }
-                .padding()
+                .background(Capsule().frame(minWidth: 130, minHeight: 30).foregroundColor(.orange))
+                .padding(1)
+            }else if(go && !pause){
+                Button{
+                    pause.toggle()
+                } label : {
+                    HStack{
+                        Image(systemName: "pause.fill")
+                            .foregroundColor(.white)
+                        Text("Pause")
+                            .foregroundColor(.white)
+                    }
+                    .padding()
+                }
+                .background(Capsule().frame(minWidth: 130, minHeight: 30).foregroundColor(.red))
+                .padding(1)
             }
-            .background(Capsule().frame(minWidth: 130, minHeight: 30).foregroundColor(.orange))
-            .padding(1)
+            
+            if(!pause){
+                
+            }else if(pause){
+                HStack{
+                    Spacer()
+                    Spacer()
+                    
+                    Button{
+                        pause.toggle()
+                        go.toggle()
+                    } label : {
+                        HStack{
+                            Image(systemName: "stop.fill")
+                                .foregroundColor(.white)
+                            Text("Stop")
+                                .foregroundColor(.white)
+                        }
+                        .padding()
+                    }
+                    .background(Capsule().frame(minWidth: 130, minHeight: 30).foregroundColor(.red))
+                    .padding(1)
+                    
+                    Spacer()
+                    
+                    Button{
+                        pause.toggle()
+                    } label : {
+                        HStack{
+                            Image(systemName: "arrow.counterclockwise")
+                                .foregroundColor(.white)
+                            Text("Restart")
+                                .foregroundColor(.white)
+                        }
+                        .padding()
+                    }
+                    .background(Capsule().frame(minWidth: 130, minHeight: 30).foregroundColor(.orange))
+                    .padding(1)
+                    
+                    Spacer()
+                    Spacer()
+                }
+            }
+            
+            
             
             
         }
