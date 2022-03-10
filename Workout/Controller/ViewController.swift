@@ -11,7 +11,7 @@ import UIKit
 
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
-    @ObservedObject var locationManager: CLLocationManager?
+    var locationManager: CLLocationManager?
     
     
     override func viewDidLoad() {
