@@ -11,6 +11,7 @@ import MapKit
 struct MainView: View {
     
     @StateObject private var viewModel = MainViewModel()
+    @EnvironmentObject var data: ProfileViewModel
     
     var body: some View {
         TabView{
@@ -39,6 +40,7 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
         MainView()
+            .environmentObject(ProfileViewModel())
     }
 }
 

@@ -12,6 +12,7 @@ struct WorkoutApp: App {
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(ProfileViewModel())
         }
     }
 }

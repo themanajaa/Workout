@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @EnvironmentObject var data: ProfileViewModel
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var firstname: String = ""
     @State var lastname: String = ""
     
@@ -61,7 +64,8 @@ struct ProfileView: View {
                 Divider()
                     .padding(.horizontal, 9)
                 Button{
-                    
+                    data.addItem(firstname: firstname, lastname: lastname, sex: sex)
+                    presentationMode.wrappedValue.dismiss()
                 } label:{
                     Text("Save")
                         .foregroundColor(.blue)
@@ -78,6 +82,17 @@ struct ProfileView: View {
             .padding(10)
             
             Spacer()
+            
+            List {
+                ForEach(data.profiles){ profile in
+                    ProfileRowView(profile: profile)
+                        .onTapGesture{
+                            data.updateItem(profile: profile)
+                        }
+                }
+                .onDelete(perform: data.deleteItem)
+                .onMove(perform: data.moveItem)
+            }
         }
         .padding(14)
         .background(Color(.systemGray4))
@@ -87,5 +102,6 @@ struct ProfileView: View {
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
+            .environmentObject(ProfileViewModel())
     }
 }
