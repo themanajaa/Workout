@@ -24,13 +24,47 @@ struct WorkoutView: View {
             
             Map(coordinateRegion: self.$location, showsUserLocation: true)
                     .frame(width: 400, height: 500)
-                    
             
-            
-            
+            HStack{
+                VStack{
+                    Text("Distance")
+                        .font(.system(size: 20))
+                        .padding()
+                    Text("0m")
+                        .font(.system(size: 20, weight: .bold))
+                        .padding()
+                    Spacer()
+                }
+                Divider()
+                    .padding(.vertical)
+                VStack{
+                    Text("Time")
+                        .font(.system(size: 20))
+                        .padding()
+                    Text("0:0:33")
+                        .font(.system(size: 20, weight: .bold))
+                        .padding()
+                    Spacer()
+                }
+                Divider()
+                    .padding(.vertical)
+                VStack{
+                    Text("Speed")
+                        .font(.system(size: 20))
+                        .padding()
+                    Text("0.00h")
+                        .font(.system(size: 20, weight: .bold))
+                        .padding()
+                    Spacer()
+                        
+                }
+                
+                
+                
+            }
+            Divider()
+                .padding(.horizontal, 0)
             Spacer()
-            
-            
         }
     }
 }

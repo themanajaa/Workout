@@ -11,6 +11,10 @@ import SwiftUI
 struct TimerView: View {
     //@StateObject timer = TimerViewModel
     
+    @State var countdownTimer = 0
+        @State var timerRunning = false
+        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var cats = ["🚲", "🏃🏽‍♂️", "🚶🏽‍♂️"]
     @State private var selectedCat = "🚲"
     @State var go: Bool = false
@@ -27,9 +31,16 @@ struct TimerView: View {
             }
             Spacer()
             
-            Text("00:00:00")
+            Text("\(countdownTimer)")
                 .font(.system(size: 50, weight: .bold))
                 .padding()
+                .onReceive(timer) { _ in
+                    if countdownTimer >= 0 && timerRunning {
+                        countdownTimer += 1
+                    } else {
+                        timerRunning = false
+                    }
+                }
             
             Text("0 m")
                 .font(.system(size: 50, weight: .bold))
@@ -49,6 +60,7 @@ struct TimerView: View {
             if(!go && !pause){
                 Button{
                     go.toggle()
+                    timerRunning = true
                 } label : {
                     HStack{
                         Image(systemName: "play.fill")
@@ -62,6 +74,7 @@ struct TimerView: View {
                 .padding(1)
             }else if(go && !pause){
                 Button{
+                    timerRunning = false
                     pause.toggle()
                 } label : {
                     HStack{
@@ -84,6 +97,8 @@ struct TimerView: View {
                     Spacer()
                     
                     Button{
+                        countdownTimer = 0
+                        timerRunning = false
                         pause.toggle()
                         go.toggle()
                     } label : {
@@ -102,6 +117,7 @@ struct TimerView: View {
                     
                     Button{
                         pause.toggle()
+                        timerRunning = true
                     } label : {
                         HStack{
                             Image(systemName: "arrow.counterclockwise")

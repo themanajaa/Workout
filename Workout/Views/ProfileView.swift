@@ -93,6 +93,8 @@ struct ProfileView: View {
                 .onDelete(perform: data.deleteItem)
                 .onMove(perform: data.moveItem)
             }
+            .cornerRadius(10)
+            .padding(10)
         }
         .padding(14)
         .background(Color(.systemGray4))
