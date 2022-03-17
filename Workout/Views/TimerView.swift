@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import MapKit
 
 
 struct TimerView: View {
-    //@StateObject timer = TimerViewModel
+    @StateObject private var viewModel = TimerViewModel()
     
     @State var countdownTimer = 0
-        @State var timerRunning = false
-        let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-    
+    @State var timerRunning = false
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+
     var cats = ["🚲", "🏃🏽‍♂️", "🚶🏽‍♂️"]
     @State private var selectedCat = "🚲"
     @State var go: Bool = false
@@ -61,6 +62,8 @@ struct TimerView: View {
                 Button{
                     go.toggle()
                     timerRunning = true
+                    let loc1 = $viewModel.region
+                    print(loc1)
                 } label : {
                     HStack{
                         Image(systemName: "play.fill")
@@ -97,6 +100,8 @@ struct TimerView: View {
                     Spacer()
                     
                     Button{
+                        let loc2 = $viewModel.region
+                        print(loc2)
                         countdownTimer = 0
                         timerRunning = false
                         pause.toggle()
@@ -148,5 +153,6 @@ struct TimerView: View {
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
         TimerView()
+            .environmentObject(ProfileViewModel())
     }
 }

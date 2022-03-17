@@ -22,6 +22,7 @@
 		F86D9EAE27DA06C500412534 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D9EAD27DA06C500412534 /* ProfileViewModel.swift */; };
 		F86D9EB027DA078600412534 /* ProfileRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86D9EAF27DA078600412534 /* ProfileRowView.swift */; };
 		F8F94EC127E32E4B006F59E7 /* ListWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F94EC027E32E4B006F59E7 /* ListWorkout.swift */; };
+		F8FC5B7927E344240027FA4F /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FC5B7827E344240027FA4F /* TimerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		F86D9EAD27DA06C500412534 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F86D9EAF27DA078600412534 /* ProfileRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRowView.swift; sourceTree = "<group>"; };
 		F8F94EC027E32E4B006F59E7 /* ListWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWorkout.swift; sourceTree = "<group>"; };
+		F8FC5B7827E344240027FA4F /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				9AFB3DAA27D0B61D00AF504F /* WorkoutViewModel.swift */,
 				9A21734C27D9F4010026F67C /* MainViewModel.swift */,
 				F86D9EAD27DA06C500412534 /* ProfileViewModel.swift */,
+				F8FC5B7827E344240027FA4F /* TimerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8FC5B7927E344240027FA4F /* TimerViewModel.swift in Sources */,
 				9AFB3DB527D0B7A000AF504F /* ProfileView.swift in Sources */,
 				F86D9EAC27DA055E00412534 /* Profile.swift in Sources */,
 				9AFB3DB327D0B70C00AF504F /* TimerView.swift in Sources */,
