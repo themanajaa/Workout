@@ -53,12 +53,12 @@ struct ProfileView: View {
                     .padding(.horizontal, 9)
                 
                 HStack{
-                    Spacer()
                     DatePicker(
                             "Date of Birth",
                             selection: $date,
                             displayedComponents: [.date])
                         .padding(5)
+                    Spacer()
                 }
                 
                 Divider()

@@ -24,7 +24,7 @@ struct MainView: View {
                 }
             
             
-            WorkoutView()
+            ListWorkout()
                 .tabItem{
                     Label("Workout", systemImage: "list.dash")
                 }
