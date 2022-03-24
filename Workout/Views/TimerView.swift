@@ -14,6 +14,7 @@ struct TimerView: View {
     
     
     @State var countdownTimer = 0
+    @State var distance = 0.0
     @State var timerRunning = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
@@ -21,6 +22,7 @@ struct TimerView: View {
     @State private var selectedCat = "🚲"
     @State var go: Bool = false
     @State var pause:Bool = false
+    var incr_val = 0.0
     
     var body: some View {
         VStack{
@@ -39,13 +41,15 @@ struct TimerView: View {
                 .onReceive(timer) { _ in
                     if countdownTimer >= 0 && timerRunning {
                         countdownTimer += 1
+                        distance+=4.23
                     } else {
                         timerRunning = false
                     }
                 }
             
-            //Text(String(format: "%.01fm", String($viewModel?.distance!)))
-                //.font(.system(size: 50, weight: .bold))
+            
+            Text(String(format: "%.2f m", distance))
+                .font(.system(size: 50, weight: .bold))
             
             
             
@@ -105,6 +109,7 @@ struct TimerView: View {
                         let loc2 = $viewModel.lastLocation
                         print(loc2)
                         countdownTimer = 0
+                        distance = 0.0
                         timerRunning = false
                         pause.toggle()
                         go.toggle()

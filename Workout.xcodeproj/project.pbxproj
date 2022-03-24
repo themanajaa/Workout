@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A21734D27D9F4010026F67C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A21734C27D9F4010026F67C /* MainViewModel.swift */; };
+		9A459DE527EC968600AB2482 /* Trajet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A459DE427EC968600AB2482 /* Trajet.swift */; };
 		9A7C413527D0AFE8004E5984 /* WorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7C413427D0AFE8004E5984 /* WorkoutApp.swift */; };
 		9A7C413727D0AFE8004E5984 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7C413627D0AFE8004E5984 /* ContentView.swift */; };
 		9A7C413927D0AFEA004E5984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A7C413827D0AFEA004E5984 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		9A21734C27D9F4010026F67C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9A459DE427EC968600AB2482 /* Trajet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trajet.swift; sourceTree = "<group>"; };
 		9A7C413127D0AFE8004E5984 /* Workout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A7C413427D0AFE8004E5984 /* WorkoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutApp.swift; sourceTree = "<group>"; };
 		9A7C413627D0AFE8004E5984 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				9AFB3DAC27D0B63800AF504F /* Workout.swift */,
 				F86D9EAB27DA055E00412534 /* Profile.swift */,
+				9A459DE427EC968600AB2482 /* Trajet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8FC5B7927E344240027FA4F /* TimerViewModel.swift in Sources */,
+				9A459DE527EC968600AB2482 /* Trajet.swift in Sources */,
 				9AFB3DB527D0B7A000AF504F /* ProfileView.swift in Sources */,
 				F86D9EAC27DA055E00412534 /* Profile.swift in Sources */,
 				9AFB3DB327D0B70C00AF504F /* TimerView.swift in Sources */,
