@@ -15,26 +15,36 @@ struct ListWorkout: View {
     var body: some View {
         VStack{
             VStack{
-                Text("🚲 3 Mars 2022")
-                HStack{
+                Text("3 Mars 2022")
+                    .foregroundColor(Color.black)
+                    .padding()
+                    
+                HStack(spacing: 10){
                     Map(coordinateRegion: self.$location, showsUserLocation: true)
-                            .frame(width: 300, height: 300)
+                            .frame(width: 310, height: 300)
+                            .padding(5)
+                            .cornerRadius(10)
                     Button{
                         
                     } label : {
                         
                         Image(systemName: "magnifyingglass.circle.fill")
                             .foregroundColor(.gray)
+                            .frame(width: 40, height: 40)
                     }
+                    
+                    
                 }
                 
             }
-            .padding(14)
-            .background(Color.white)
-            .cornerRadius(10)
+            
         }
-            
-            
+        .background(Color.white)
+        .cornerRadius(10)
+        .overlay(
+            RoundedRectangle(cornerRadius: 16)
+                .stroke(Color.gray, lineWidth: 1))
+        .padding(10)
     }
     
 }

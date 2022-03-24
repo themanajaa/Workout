@@ -22,6 +22,7 @@ struct ProfileRowView: View {
         }
         .font(.title2)
         .padding(.vertical, 10)
+        .padding(.horizontal, 5)
     }
 }
 
