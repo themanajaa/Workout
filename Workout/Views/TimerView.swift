@@ -12,6 +12,7 @@ import MapKit
 struct TimerView: View {
     @StateObject private var viewModel = TimerViewModel()
     
+    
     @State var countdownTimer = 0
     @State var timerRunning = false
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -43,8 +44,9 @@ struct TimerView: View {
                     }
                 }
             
-            Text("0 m")
-                .font(.system(size: 50, weight: .bold))
+            //Text(String(format: "%.01fm", String($viewModel?.distance!)))
+                //.font(.system(size: 50, weight: .bold))
+            
             
             
             Spacer()
@@ -62,7 +64,7 @@ struct TimerView: View {
                 Button{
                     go.toggle()
                     timerRunning = true
-                    let loc1 = $viewModel.region
+                    let loc1 = $viewModel.firsttLocation
                     print(loc1)
                 } label : {
                     HStack{
@@ -100,7 +102,7 @@ struct TimerView: View {
                     Spacer()
                     
                     Button{
-                        let loc2 = $viewModel.region
+                        let loc2 = $viewModel.lastLocation
                         print(loc2)
                         countdownTimer = 0
                         timerRunning = false
