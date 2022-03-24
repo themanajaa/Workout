@@ -18,3 +18,5 @@ struct Trajet: Identifiable {
         Trajet(distance: 253.56, time: "0:23:56", speed: 12.23)
     ]
 }
+
+

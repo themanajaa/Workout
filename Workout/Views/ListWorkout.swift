@@ -10,7 +10,12 @@ import MapKit
 
 struct ListWorkout: View {
     
-    @State private var location = MKCoordinateRegion(center: .init(latitude: 35.677735, longitude: 139.764740), latitudinalMeters: 500, longitudinalMeters: 500) //Affichage autour des coordonnées à afficher, réglage de la plage et définition des coordonnées
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), span: MKCoordinateSpan(latitudeDelta: 10, longitudeDelta: 10))
+
+        let annotations = [
+            City(name: "London", coordinate: CLLocationCoordinate2D(latitude: 47.639674, longitude: 6.863849)),
+            City(name: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508))
+        ]
 
     var body: some View {
         VStack{
@@ -20,7 +25,9 @@ struct ListWorkout: View {
                     .padding()
                     
                 HStack(spacing: 10){
-                    Map(coordinateRegion: self.$location, showsUserLocation: true)
+                    Map(coordinateRegion: $region, annotationItems: annotations) {
+                                MapPin(coordinate: $0.coordinate)
+                            }
                             .frame(width: 310, height: 300)
                             .padding(5)
                             .cornerRadius(10)

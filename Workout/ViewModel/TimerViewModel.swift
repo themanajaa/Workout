@@ -16,10 +16,10 @@ class TimerViewModel: NSObject, ObservableObject, CLLocationManagerDelegate{
     func getTrajets(){
         trajets.append(contentsOf: Trajet.testData)
     }
-    func addTrajet(distance: Double, time: String, speed: Double){
-        let newTrajet = Trajet(distance: <#T##Double#>, time: <#T##String#>, speed: <#T##Double#>)
-        trajets.append(newTrajet)
-    }
+    //func addTrajet(distance: Double, time: String, speed: Double){
+        //let newTrajet = Trajet(distance: <#T##Double#>, time: <#T##String#>, speed: <#T##Double#>)
+        //trajets.append(newTrajet)
+    //}
     
     
     
